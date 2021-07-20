@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "coding challenge for e commerse shop",
   "main": "server.js",
-  "scripts": {
+   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Thanos",
   "license": "MIT",
