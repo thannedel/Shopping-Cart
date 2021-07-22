@@ -4,7 +4,7 @@ import { Product } from "../models/Product";
 import { Link } from "react-router-dom";
 import { Paginate } from "./Paginate";
 
-import { Card, CardGroup, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 export const Products = () => {
   const { products, isLoading, addToCart, productsInCart } = useProduct();
@@ -29,8 +29,8 @@ export const Products = () => {
       <Container>
         <Row xs={1} md={2} className='g-4'>
           {products.results.map((product: Product) => (
-            <Col>
-              <Card style={{ width: "18rem", maxHeight: "400px" }}>
+            <Col key={product.id}>
+              <Card key={product.id} style={{ width: "18rem" }}>
                 <SingleProduct
                   key={product.id}
                   product={product}
